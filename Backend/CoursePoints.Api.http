@@ -1,0 +1,79 @@
+@CoursePoints.Api_HostAddress = http://localhost:5265
+@accessToken = paste-access-token-here
+@refreshToken = paste-refresh-token-here
+@courseId = paste-course-id-here
+@studentId = paste-student-id-here
+
+### Login with seeded admin
+POST {{CoursePoints.Api_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@coursepoints.local",
+  "password": "Admin@12345"
+}
+
+### Change forced admin password
+POST {{CoursePoints.Api_HostAddress}}/api/auth/change-password
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "currentPassword": "Admin@12345",
+  "newPassword": "Admin@123456"
+}
+
+### Refresh token
+POST {{CoursePoints.Api_HostAddress}}/api/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refreshToken}}"
+}
+
+### Create student
+POST {{CoursePoints.Api_HostAddress}}/api/students
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "fullName": "Student One",
+  "email": "student1@example.com",
+  "password": "Student@12345",
+  "mustChangePassword": true
+}
+
+### Create course
+POST {{CoursePoints.Api_HostAddress}}/api/courses
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "name": "Algorithms",
+  "code": "CS101",
+  "description": "Course points demo"
+}
+
+### Assign student to course
+POST {{CoursePoints.Api_HostAddress}}/api/courses/{{courseId}}/students
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "studentId": "{{studentId}}"
+}
+
+### Add attendance points
+POST {{CoursePoints.Api_HostAddress}}/api/courses/{{courseId}}/points/attendance
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "studentId": "{{studentId}}",
+  "courseSessionId": null,
+  "isPresent": true
+}
+
+### Leaderboard
+GET {{CoursePoints.Api_HostAddress}}/api/courses/{{courseId}}/points/leaderboard
+Authorization: Bearer {{accessToken}}

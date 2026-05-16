@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+html[dir='rtl'] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir='ltr'] body {
+  direction: ltr;
+  text-align: left;
+}
+
+html[dir='rtl'] .MuiTypography-root,
+html[dir='rtl'] .MuiInputBase-input,
+html[dir='rtl'] .MuiListItemText-root,
+html[dir='rtl'] .MuiTableCell-root {
+  text-align: right;
+}
+
+html[dir='rtl'] .MuiInputLabel-root {
+  right: 1rem;
+  left: auto;
+  transform-origin: top right;
+}
+
+html[dir='rtl'] .MuiInputLabel-shrink {
+  transform-origin: top right;
+}
+
+html[dir='rtl'] .MuiInputBase-root {
+  direction: rtl;
+}
+
+html[dir='rtl'] .MuiInputAdornment-positionEnd {
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+html[dir='rtl'] .MuiInputAdornment-positionStart {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+html[dir='rtl'] .MuiOutlinedInput-notchedOutline {
+  text-align: right;
+}
+
+html[dir='rtl'] .MuiButton-startIcon {
+  margin-left: 8px;
+  margin-right: -4px;
+}
+
+html[dir='rtl'] .MuiButton-endIcon {
+  margin-right: 8px;
+  margin-left: -4px;
+}
+
+html[dir='rtl'] .MuiTableCell-alignRight {
+  text-align: left;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-shell {
+  animation: page-slide-in 260ms ease-out both;
+}
+
+html[dir='rtl'] .page-shell {
+  animation-name: page-slide-in-rtl;
+}
+
+@keyframes page-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes page-slide-in-rtl {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-shell {
+    animation: none;
+  }
+}
+
+.MuiCardContent-root:has(.MuiTable-root) {
+  overflow-x: auto;
+}
+
+.MuiTable-root {
+  min-width: 680px;
+}
+
+.MuiSelect-select {
+  display: flex;
+  align-items: center;
+}
+
+.MuiButton-root {
+  white-space: normal;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.MuiCard-root,
+.MuiPaper-root {
+  max-width: 100%;
+}

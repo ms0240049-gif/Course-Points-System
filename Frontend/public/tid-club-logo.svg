@@ -1,0 +1,18 @@
+<svg width="240" height="160" viewBox="0 0 240 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="160" rx="24" fill="#F4F7FB"/>
+  <g stroke="#2478B8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M42 56h54l-22 20 31 46"/>
+    <path d="M43 56l-22 26"/>
+    <circle cx="20" cy="82" r="8"/>
+    <circle cx="39" cy="100" r="8"/>
+    <path d="M121 42l-18 82"/>
+    <path d="M119 66c-8 12-12 25-10 39"/>
+    <circle cx="126" cy="28" r="10"/>
+    <path d="M151 50h48l-20 26 26 20"/>
+    <path d="M151 50l31 46-28 32"/>
+    <path d="M161 66h14m-7 0v10m19-8h14m-7 0v10"/>
+    <circle cx="219" cy="94" r="9"/>
+    <circle cx="205" cy="115" r="9"/>
+  </g>
+  <text x="120" y="148" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="10" fill="#2478B8">TID CLUB</text>
+</svg>
