@@ -154,6 +154,7 @@ export function AppLayout() {
             key={link.to}
             component={NavLink}
             to={link.to}
+            end={link.label === 'dashboard'}
             onClick={() => setMobileOpen(false)}
             sx={{
               borderRadius: 2,
